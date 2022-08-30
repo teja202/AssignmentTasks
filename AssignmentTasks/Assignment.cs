@@ -15,15 +15,10 @@ namespace AssignmentTasks
         [TestInitialize]
         public void Initialize()
         {
-            var options = new ChromeOptions();
-            options.AddArgument("--start-maximized");
-            options.AddArgument("--ignore-certificate-errors");
-            options.AddArgument("--disable-popup-blocking");
-            options.AddArgument("--incognito");
-
-            // Manages brwser driver  like chrome, firefox base don selection
+            // Manages brwser driver  like chrome, firefox based on selection
             new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig());
-            driver = new ChromeDriver(options);
+            driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://au-shopv5.uat.bdirectcloud.net/"); //Update the Url
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30)); // Explicit Wait
         }
