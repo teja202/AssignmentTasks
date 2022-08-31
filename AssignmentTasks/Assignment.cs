@@ -35,7 +35,7 @@ namespace AssignmentTasks
             // Click  on Login button
             IWebElement LoginButton = wait.Until(ExpectedConditions.ElementExists(By.Id("submitBtn")));
             LoginButton.Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(7000);
         }
 
         [TestMethod]
@@ -73,7 +73,7 @@ namespace AssignmentTasks
 
 
             // AddTo basket Locator
-            IWebElement addItemToBasket = wait.Until(ExpectedConditions.ElementExists(By.XPath("(//*[@class='btn btn-primary add-btn'])[last()]")));
+            IWebElement addItemToBasket = wait.Until(ExpectedConditions.ElementExists(By.XPath("(//*[@class='btn btn-primary add-btn'])[last()-1]")));
             addItemToBasket.Click();
 
             IWebElement CartButton = wait.Until(ExpectedConditions.ElementExists(By.XPath("//*[@class='cart']")));
